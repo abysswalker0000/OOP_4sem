@@ -1,0 +1,79 @@
+﻿@page
+@model WebApp.Web.Pages.Firestore.CreateModel
+@{
+    ViewData["Title"] = "Create Game";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            padding-top: 40px;
+        }
+
+        .header {
+            margin-bottom: 20px;
+            color: #0d6efd;
+        }
+
+        .form-control, .btn-primary {
+            border-radius: 0.375rem;
+        }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+
+            .btn-primary:hover {
+                background-color: #0a58ca;
+                border-color: #0a53be;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="header">Create Game</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form method="post">
+                    <div class="form-group mb-3">
+                        <label asp-for="@Model.Game.title" class="form-label">Title</label>
+                        <input asp-for="@Model.Game.title" class="form-control" placeholder="Enter title" />
+                        <span asp-validation-for="@Model.Game.title" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="@Model.Game.genre" class="form-label">Genre</label>
+                        <select asp-for="@Model.Game.genre" asp-items="@(new SelectList(Model.Genres))" class="form-control">
+                            <option value="">-- Select Genre --</option>
+                        </select>
+                        <span asp-validation-for="@Model.Game.genre" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="@Model.Game.description" class="form-label">Description</label>
+                        <textarea asp-for="@Model.Game.description" class="form-control" placeholder="Enter description" rows="3"></textarea>
+                        <span asp-validation-for="@Model.Game.description" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                        
+                    </div>
+                    <a href="/Firestore/Index" class="btn btn-secondary mt-3">Back to Games</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

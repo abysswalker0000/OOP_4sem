@@ -1,0 +1,68 @@
+﻿@page "{gameId}"
+@model WebApp.Web.Pages.ReviewPage.ViewReviewModel
+@{
+    ViewData["Title"] = "View Review";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .markdown-content {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            margin-top: 10px;
+        }
+
+            .btn-custom:hover {
+                background-color: #0056b3;
+                color: white;
+            }
+
+        .comment {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">Review for @Model.Game.title</div>
+            <div class="card-body">
+                <h5 class="card-title">Rating: @Model.Review.rating / 10</h5>
+                <h5 class="card-title">Content</h5>
+                <div class="markdown-content">
+                    @Html.Raw(Model.Review.content)
+                </div>
+            </div>
+        </div>
+
+        <a href="/Firestore/Index" class="btn btn-custom">Back to Games</a>
+    </div>
+</body>
+</html>

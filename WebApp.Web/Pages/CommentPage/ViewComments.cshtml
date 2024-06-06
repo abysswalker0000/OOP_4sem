@@ -1,0 +1,59 @@
+﻿@page
+@model WebApp.Web.Pages.CommentPage.ViewCommentsModel
+@{
+    ViewData["Title"] = "View and Add Comments";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Comments</h1>
+
+        <!-- Список комментариев -->
+        <div class="list-group mb-3">
+            @foreach (var comment in Model.Comments)
+            {
+                <div class="list-group-item">
+                    <h5 class="mb-1">@comment.nickname (Rating: @comment.commRating)</h5>
+                    <p class="mb-1">@comment.content</p>
+                    <small>Posted on @comment.datePostedComment.ToString("g")</small>
+                </div>
+            }
+        </div>
+
+        <!-- Форма для добавления комментария -->
+        <div class="card">
+            <div class="card-header">Add a Comment</div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="form-group">
+                        <label>Nickname:</label>
+                        <input type="text" class="form-control" name="nickname" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Rating:</label>
+                        <input type="number" class="form-control" name="commRating" min="1" max="5" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Content:</label>
+                        <textarea class="form-control" name="content" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Comment</button>
+                    
+                </form>
+                <a href="/Firestore/Index" class="btn btn-secondary mt-3">Back to Games</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

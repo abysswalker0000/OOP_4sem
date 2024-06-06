@@ -1,0 +1,61 @@
+﻿@page
+@model WebApp.Web.Pages.ReviewPage.CreateReviewModel
+@{
+    ViewData["Title"] = "Create Review";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+        }
+
+        textarea {
+            min-height: 150px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">Create a Review for a Game</div>
+            <div class="card-body">
+                <form method="post">
+                    <input type="hidden" asp-for="gameId" />
+                    <div class="form-group">
+                        <label asp-for="Review.rating">Rating:</label>
+                        <input asp-for="Review.rating" class="form-control" type="number" min="1" max="10" />
+                        <span asp-validation-for="Review.rating" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Review.content">Review:</label>
+                        <textarea id="markdown-editor" asp-for="Review.content" class="form-control"></textarea>
+                        <span asp-validation-for="Review.content" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                </form>
+            </div>
+        </div>
+        <a href="/Firestore/Index" class="btn btn-secondary mt-3">Back to Games</a>
+    </div>
+    <script>
+        var easyMDE = new EasyMDE({ element: document.getElementById('markdown-editor') });
+    </script>
+</body>
+</html>

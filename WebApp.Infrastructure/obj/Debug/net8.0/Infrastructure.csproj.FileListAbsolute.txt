@@ -1,0 +1,11 @@
+D:\Laby\oop\oop\WebApp\Infrastructure\bin\Debug\net8.0\Infrastructure.deps.json
+D:\Laby\oop\oop\WebApp\Infrastructure\bin\Debug\net8.0\Infrastructure.dll
+D:\Laby\oop\oop\WebApp\Infrastructure\bin\Debug\net8.0\Infrastructure.pdb
+D:\Laby\oop\oop\WebApp\Infrastructure\obj\Debug\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Laby\oop\oop\WebApp\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfoInputs.cache
+D:\Laby\oop\oop\WebApp\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfo.cs
+D:\Laby\oop\oop\WebApp\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
+D:\Laby\oop\oop\WebApp\Infrastructure\obj\Debug\net8.0\Infrastructure.dll
+D:\Laby\oop\oop\WebApp\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
+D:\Laby\oop\oop\WebApp\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
+D:\Laby\oop\oop\WebApp\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
